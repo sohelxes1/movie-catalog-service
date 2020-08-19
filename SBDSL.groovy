@@ -11,7 +11,7 @@ job('Build-SB-DSL') {
     }
     publishers {
         //archive the war file generated
-        archiveArtifacts '**/*.jar'
+        archiveArtifacts '**/mo*.jar'
     }
 }
 
