@@ -8,7 +8,7 @@ maven('clean package')
 post{
 success{
 echo "Archiving Artifacts"
-archiveArtifacts artifacts: ''**/*.jar'
+archiveArtifacts artifacts: '**/*.jar'
 }
 }
 }
