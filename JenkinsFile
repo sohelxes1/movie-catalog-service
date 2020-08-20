@@ -3,7 +3,7 @@ agent any
 stages{
 stage('Build Application'){
 steps{
-maven('clean package')
+sh "mvn clean package"
 }
 post{
 success{
