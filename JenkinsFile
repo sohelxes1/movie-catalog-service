@@ -1,0 +1,21 @@
+pipeline{
+agent any
+stages{
+stage('Build Application'){
+steps{
+maven('clean package')
+}
+post{
+success{
+echo "Archiving Artifacts"
+archiveArtifacts artifacts: **/*.jar
+}
+}
+}
+stage('Create Docker Image'){
+steps{
+sh "docker build movie-catalog:${env.BUILD_ID}"
+}
+}
+}
+}
